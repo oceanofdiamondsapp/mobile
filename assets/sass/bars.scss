@@ -1,0 +1,105 @@
+/*
+|---------------------------------------------------------------------
+| Bars
+|---------------------------------------------------------------------
+*/
+
+.bar {
+    height: 70px;
+    position: relative;
+
+    > .title {
+        font-size: 16px;
+        left: 0;
+        line-height: 70px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+
+        > img {
+            height: 30px;
+            margin-top: 20px;
+        }
+    }
+
+    .icon-right {
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+        z-index: 9999;
+
+        &:active {
+            top: 19px;
+        }
+    }
+
+    .icon-left {
+        padding: 10px;
+        position: absolute;
+        left: 10px;
+        top: 17px;
+        z-index: 9999;
+    }
+
+    /*
+    |---------------------------------------------------------------------
+    | Branded Bar
+    |---------------------------------------------------------------------
+    */
+
+    &.bar-primary {
+        background: #052136 url('../img/primary-header-bg.jpg') no-repeat center top;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99999;
+
+        a {
+            color: #808285;
+        }
+    }
+
+    /*
+    |---------------------------------------------------------------------
+    | Small Bar
+    |---------------------------------------------------------------------
+    */
+
+    &.bar-sm {
+        background-color: #f1f4f6;
+        height: 50px;
+
+        .icon-right {
+            top: 10px;
+
+            &:active {
+                top: 12px;
+            }
+        }
+
+        .icon-left {
+            top: 10px;
+
+            &:active {
+                top: 12px;
+            }
+        }
+
+        > .title {
+            font-family: $header-font-medium;
+            font-weight: normal;
+            line-height: 50px;
+            text-transform: uppercase;
+
+            > small {
+                font-family: $base-font-light;
+                font-size: 16px;
+                text-transform: none;
+            }
+        }
+    }
+}

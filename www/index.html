@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
+        
+        <!-- Title -->
+        <title>Ocean of Diamonds</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/app.css">
+
+        <!-- Styles (Bound to root scope variable) -->
+        <style type="text/css">
+            {{ animation }}
+        </style>
+    </head>
+
+    <body>
+        <div ui-view></div>
+
+        <!-- Scripts -->
+        <script src="cordova.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/date.js"></script>
+        <script src="js/ng-cordova.min.js"></script>
+
+        <script>
+            /*
+            | Handle the deviceready event. Set the status bar style.
+            */
+            document.addEventListener("deviceready", function() {
+                if (cordova && cordova.plugins.Keyboard){
+                    console.log("has keyboard plugin");
+
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+
+                    window.addEventListener('native.keyboardshow', function(e){
+                        document.getElementsByClassName("header")[0].style.position = "absolute";
+                    });
+
+                    window.addEventListener('native.keyboardhide', function(e){
+                        document.getElementsByClassName("header")[0].style.position = "fixed";
+                    });
+                }
+            }, false);
+
+            /**
+             * Handle iOS push notifications.
+             * 
+             * @param {Object} event
+             * 
+             * @return {Void}
+             */
+            // function onNotificationAPN (event) {
+            //     if (event.alert) {
+            //         navigator.notification.alert(event.alert);
+            //     }
+
+            //     if (event.sound) {
+            //         var sound = new Media(event.sound);
+            //         sound.play();
+            //     }
+
+            //     if (event.badge) {
+            //         window.plugins.pushNotification.setApplicationIconBadgeNumber(function() {}, function() {}, event.badge);
+            //     }
+            // };
+        </script>
+    </body>
+</html>

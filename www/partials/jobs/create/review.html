@@ -1,0 +1,86 @@
+<div class="navbar">
+    <a href="#/jobs/create/details" class="navbar-left text-purple" ng-click="setAnimation('slide-back')">
+        <i class="icon icon-arrow-3"></i> Back
+    </a>
+
+    <h2 class="navbar-title">
+        <span class="text-purple">Step 3</span>
+        <span class="navbar-title-description">Review</span>
+    </h2>
+</div>
+
+<div class="padding-20">
+    <p class="text-center">Please review and confirm the details of your quote request.</p>
+
+    <div class="panel">
+        <div class="form-group">
+            <label class="text-purple">Metal Type:</label>
+
+            <if ng-if="job.metal_type_ids.length == 0">None selected</if>
+
+            <ul class="list-unstyled" ng-repeat="metal in job.metal_type_ids">
+                <li>{{ metal | metalDesc }}</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">Stone Type:</label>
+
+            <if ng-if="job.stones.length === 0">None selected</if>
+
+            <ul class="list-unstyled" ng-repeat="stone in job.stones">
+                <li>{{ stone | stoneDesc }}</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">Carat (Size):</label>
+            <if ng-if="job.carat.length == 0">None selected</if>
+            {{ job.carat }}
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">Budget Range:</label>
+            {{ getBudgetString(job.budget) }}
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">Deadline:</label>
+            <if ng-if="job.deadline.length == 0">None selected</if>
+            {{ job.deadline | date }}
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">State:</label>
+            <if ng-if="job.ship_to_state.length == 0">None selected</if>
+            {{ job.ship_to_state }}
+        </div>
+
+        <div class="form-group">
+            <label class="text-purple">Notes:</label>
+            <if ng-if="job.notes == ''">None provided</if>
+            {{ job.notes }}
+        </div>
+    </div>
+
+    <a href="#/jobs/create/details" class="btn btn-block btn-default text-purple" ng-click="setAnimation('slide-back')">Edit</a>
+
+    <table class="table table-checkbox">
+        <tr>
+            <td>
+                <a ng-click="terms.checked = !terms.checked">
+                    <div class="checkbox" ng-class="{checked: terms.checked}"></div>
+                </a>
+            </td>
+            <td>
+                You agree with our <span class="text-purple" ng-click="launchPrivacyPolicyModal()">Privacy Policy</span> and <span class="text-purple" ng-click="launchReturnPolicyModal()">Return Policy</span>
+            </td>
+        </tr>
+    </table>
+
+    <button type="button" class="btn btn-success btn-block" ng-click="submit()" ng-disabled="!terms.checked || loading">
+        <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !loading}"></i> Submit
+    </button>
+
+    <button type="button" class="btn btn-danger btn-block" ng-click="cancel()">Cancel</button>
+</div>

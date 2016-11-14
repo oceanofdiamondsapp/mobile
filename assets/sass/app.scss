@@ -1,0 +1,51 @@
+/*
+|---------------------------------------------------------------------
+| Vendor
+|---------------------------------------------------------------------
+*/
+
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+/*
+|---------------------------------------------------------------------
+| App
+|---------------------------------------------------------------------
+*/
+
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "icons";
+@import "normalize";
+@import "animations";
+@import "lists";
+@import "typography";
+@import "bars";
+@import "forms";
+@import "buttons";
+@import "tables";
+@import "panels";
+@import "cards";
+@import "contextual-colors";
+@import "chatboxes";
+@import "helpers";
+@import "navbars";
+@import "headers";
+@import "tour";
+
+body{
+	-webkit-touch-callout: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-user-drag: none;
+	-ms-content-zooming: none;
+}

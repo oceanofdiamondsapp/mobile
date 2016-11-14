@@ -1,0 +1,50 @@
+<div class="navbar">
+    <a href="#/jobs/{{quote.job_id}}/quotes/{{quote.id}}" class="navbar-left text-mild-blue" ng-click="setAnimation('slide-back')">
+        <i class="icon icon-arrow-3"></i> Back
+    </a>
+
+    <h2 class="navbar-title text-mild-blue">Decline Quote</h2>
+</div>
+
+<div class="padding-20">
+    <p>We are sorry this quote was not acceptable to you. We encourage you to provide a short reason so we may improve our service:</p>
+
+    <div class="radio">
+        <input type="radio" name="decline_type_id" id="no-longer-interested" value="1" ng-model="declineTypeId">
+        <label for="no-longer-interested" class="text-mild-blue">
+            <span class="radio-btn"></span> No longer interested
+        </label>
+    </div>
+
+    <div class="radio">
+        <input type="radio" name="decline_type_id" id="too-expensive" value="2" ng-model="declineTypeId">
+        <label for="too-expensive" class="text-mild-blue">
+            <span class="radio-btn"></span> Too expensive
+        </label>
+    </div>
+
+    <div class="radio">
+        <input type="radio" name="decline_type_id" id="bought-elsewhere" value="3" ng-model="declineTypeId">
+        <label for="bought-elsewhere" class="text-mild-blue">
+            <span class="radio-btn"></span> Bought elsewhere
+        </label>
+    </div>
+
+    <div class="radio">
+        <input type="radio" name="decline_type_id" id="just-curious" value="4" ng-model="declineTypeId">
+        <label for="just-curious" class="text-mild-blue">
+            <span class="radio-btn"></span> I was just curious
+        </label>
+    </div>
+
+    <div class="radio">
+        <input type="radio" name="decline_type_id" id="other" value="5" ng-model="declineTypeId">
+        <label for="other" class="text-mild-blue">
+            <span class="radio-btn"></span> Other
+        </label>
+    </div>
+
+    <button type="button" class="btn btn-default btn-block text-mild-blue" ng-click="decline()" ng-disabled="!declineTypeId || loading">
+        <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !loading}"></i> Submit
+    </button>
+</div>

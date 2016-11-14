@@ -1,0 +1,70 @@
+<div class="navbar">
+    <a href="#/jobs/{{quote.job_id}}/quotes/{{quote.id}}" class="navbar-left text-mild-blue" ng-click="setAnimation('slide-back')">
+        <i class="icon icon-arrow-3"></i> Back
+    </a>
+
+    <h2 class="navbar-title text-mild-blue">PayPal Checkout</h2>
+</div>
+
+<div class="padding-20">
+    <div class="card mild-blue">
+        <p>Please Note: This app does not capture or store your credit card details.</p>
+    </div>
+
+    <label class="text-mild-blue">
+        Review your order:
+    </label>
+
+    <div class="panel panel-basic">
+        <p>
+            <span class="label text-mild-blue">Description:</span> {{ quote.description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Your Stone:</span> {{ quote.stones_description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Your Setting:</span> {{ quote.setting_details }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">Quote:</span> {{ quote.price | currency : '$' : 2 }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Tax ({{ quote.tax.description }}):</span> {{ quote.tax.amount | currency : '$' : 2 }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">Total:</span> {{ quote.total_due | currency : '$' : 2 }}
+        </p>
+    </div>
+
+    <form ng-submit="purchase()">
+        <table class="table table-checkbox">
+            <tr>
+                <td>
+                    <a ng-click="agrees = !agrees">
+                        <div class="checkbox" ng-class="{checked: agrees}"></div>
+                    </a>
+                </td>
+                <td>
+                    You agree with our <span class="text-mild-blue" ng-click="launchReturnPolicyModal()">Return Policy</span>
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit" class="btn btn-default btn-block" ng-disabled="!agrees || loading">
+            <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !loading}"></i>
+            <i class="fa fa-paypal" ng-class="{'ng-hide': loading}"></i>
+            PayPal Checkout
+        </button>
+    </form>
+
+    <a href="#/jobs/{{quote.job_id}}/quotes/{{quote.id}}" class="btn btn-danger btn-block" ng-click="setAnimation('slide-back')">Cancel</a>
+</div>

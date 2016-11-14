@@ -1,0 +1,29 @@
+<div class="bar bar-sm">
+    <h2 class="title">
+        <span class="text-seafoam">Overview</span>
+    </h2>
+</div>
+
+<div class="padding-20">
+    <p>You are logged in as {{ user.email }}</p>
+
+    <div class="panel">
+        <div class="form-group">
+            <label class="text-seafoam">Email:</label>
+            {{ user.email }}
+        </div>
+
+        <div class="form-group">
+            <label class="text-seafoam">Name:</label>
+            {{ user.name }}
+        </div>
+    </div>
+
+    <a ng-click="setAnimation('slide-forward')" href="#/account/edit" class="btn btn-default btn-block text-seafoam">
+       Edit Account
+    </a>
+
+    <button type="button" ng-click="logout()" class="btn btn-danger btn-block needsclick" ng-style="{'opacity': lo_loading?.6:1}">
+        <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !lo_loading}"></i> Log Out
+    </button>
+</div>

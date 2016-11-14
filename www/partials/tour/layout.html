@@ -1,0 +1,14 @@
+
+
+<div class="panel-tour" ng-class="pageClass[pageTour]">
+
+	<div class="tour-header">
+		<h3>Step {{pageTour + 1}}</h3>
+		<div>
+			<span ng-repeat="page in pageClass" ng-class="{'pager-fill': pageTour == $index}"><span>
+		</div>
+	</div>
+	
+	<div ui-view ng-class="$root.animation" class="panel-tour"></div>
+	<!-- <div ui-view class="panel-tour"></div> -->
+</div>

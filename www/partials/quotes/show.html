@@ -1,0 +1,115 @@
+<div class="navbar">
+    <a href="#/jobs/{{ job.id }}" class="navbar-left text-mild-blue" ng-click="setAnimation('slide-back')">
+        <i class="icon icon-arrow-3"></i> Back
+    </a>
+
+    <h2 class="navbar-title text-mild-blue">{{ quote.quote_number }}</h2>
+</div>
+
+<div class="padding-20">
+    <label class="text-mild-blue">
+        Here is what we have quoted:
+    </label>
+
+    <div class="panel panel-basic">
+        <p>
+            <span class="text-mild-blue">Job:</span> {{ job.job_number }} - {{ job.nickname }}
+            <br>
+            <span class="text-mild-blue">Quote:</span> {{ quote.quote_number }}
+            <br>
+            <span class="text-mild-blue">Created:</span> {{ getDateString(quote.created_at) }}
+            <br>
+            <span class="text-mild-blue">Status:</span> {{ quote.status.description }}
+        </p>
+
+        <div class="panel-footer coral">
+            <span class="text-gibson-regular">
+                Expires:
+            </span> {{ getDateString(quote.expires_at) }}
+        </div>
+    </div>
+
+    <div class="panel panel-basic">
+        <p>
+            <span class="label text-mild-blue">
+                Jewelry Type:
+            </span> {{ getJewelryName(quote.jewelry_type_id) }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Description:
+            </span> {{ quote.description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Gemstones:
+            </span> {{ quote.stones_description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Metals:
+            </span> {{ quote.metals_description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Setting:
+            </span> {{ quote.setting_details }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Size:
+            </span> {{ quote.size_details }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Other Details:
+            </span> {{ quote.other_details }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">
+                Quote:
+            </span> {{ quote.price | currency : '$' : 2 }} ({{ quote.quote_number }})
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Tax ({{ quote.tax.description }}):
+            </span> {{ quote.tax_due | currency : '$' : 2 }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">
+                Shipping:
+            </span> {{ quote.shipping | currency : '$' : 2 }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">
+                Total:
+            </span> ${{ quote.total_due }}
+        </p>
+    </div>
+
+    <div ng-if="quote.status.description !== 'Declined' && quote.status.description !== 'Ordered'">
+        <div class="btn-duo">
+            <a ng-click="setAnimation('slide-forward')" href="#/jobs/{{ quote.job_id }}/quotes/{{ quote.id }}/decline" class="btn btn-danger btn-block">
+               Decline
+            </a>
+
+            <a ng-click="setAnimation('slide-forward')" href="#/jobs/{{ quote.job_id }}/quotes/{{ quote.id }}/purchase" class="btn btn-success btn-block">
+               Purchase
+            </a>
+        </div>
+    </div>
+</div>

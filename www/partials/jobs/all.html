@@ -1,0 +1,22 @@
+<div class="navbar">
+    <h2 class="navbar-title text-mild-blue">Summary of Jobs</h2>
+</div>
+
+<div class="padding-20">
+    <p ng-if="loaded && jobs.length === 0" class="text-center">You have not submitted any requests.</p>
+
+    <p ng-if="!loaded" class="text-center">Loading...</p>
+
+    <a href="#/jobs/{{ job.id }}" ng-repeat="job in jobs" ng-click="setAnimation('slide-forward'); setTargetJob(job)">
+		<img ng-src="{{getFirstPhoto(job)}}" class="img-responsive" ng-if="job.images.length > 0">
+
+		<div class="card mild-blue">
+			<p>
+				<strong>Job:</strong> {{ job.job_number }}<br>
+				<!-- <strong>Nickname:</strong> {{ job.nickname }}<br> -->
+				<strong>Status:</strong> {{ job.status.description }}<br>
+				<strong>Submitted:</strong> {{ getDateString(job.created_at) }}
+			</p>
+		</div>
+	</a>
+</div>

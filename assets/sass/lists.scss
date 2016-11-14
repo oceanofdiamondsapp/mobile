@@ -1,0 +1,46 @@
+/*
+|---------------------------------------------------------------------
+| Lists
+|---------------------------------------------------------------------
+*/
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+|---------------------------------------------------------------------
+| List Groups
+|---------------------------------------------------------------------
+*/
+
+.list-group {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.list-group-xl {
+    > li {
+        box-shadow: 0 -10px 80px rgba(000, 000, 000, 0.2) inset, 0 8px 10px #b6b9ba;
+        text-shadow: 0 2px 1px rgba(000, 000, 000, 0.1);
+        text-transform: uppercase;
+
+        > a {
+            color: #fff;
+            display: block;
+            font-family: $header-font-medium;
+            height: 95px;
+            line-height: 95px;
+            text-align: center;
+
+            &:active {
+                box-shadow: 0 -10px 80px rgba(000, 000, 000, 0.1) inset, 0 8px 10px #b6b9ba;
+                padding-top: 2px;
+            }
+        }
+    }
+}

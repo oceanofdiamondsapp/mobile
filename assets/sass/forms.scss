@@ -1,0 +1,163 @@
+/*
+|---------------------------------------------------------------------
+| Forms
+|---------------------------------------------------------------------
+*/
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+textarea {
+    background: none;
+    border: 1px solid #e6e7e8;
+    border-radius: 0;
+    color: #808285;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    height: 63px;
+    padding: 0 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea {
+    padding: 20px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Form Group
+|---------------------------------------------------------------------
+*/
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Select Box
+|---------------------------------------------------------------------
+*/
+
+.form-select {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        @include background-gradient(rgba(232, 237, 240, 1), rgba(197, 199, 200, 1));
+        color: #808285;
+        content: "\e603";
+        font-family: "icomoon";
+        font-size: 10px;
+        padding: 27px 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+}
+
+/*
+|---------------------------------------------------------------------
+| Checkbox
+|---------------------------------------------------------------------
+*/
+
+.checkbox {
+    background: url('../img/checkbox-sprite.jpg') no-repeat left top;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    &.checked {
+        background-position: right top;
+    }
+}
+
+/*
+|---------------------------------------------------------------------
+| Radio
+|---------------------------------------------------------------------
+*/
+
+// .radio {
+//     position: relative;
+
+//     &:after {
+//         background: url('../img/radio-button-sprite.png') no-repeat left top;
+//         background-size: 50px;
+//         content: ' ';
+//         display: block;
+//         height: 25px;
+//         left: 0;
+//         position: absolute;
+//         top: 0;
+//         width: 25px;
+//     }
+
+//     &.checked {
+//         &:after {
+//             background-position: right top;
+//         }
+//     }
+
+//     label {
+//         line-height: 25px;
+//         margin-left: 35px;
+
+//         input {
+//             display: none;
+//         }
+//     }
+// }
+
+/*
+|---------------------------------------------------------------------
+| Radios
+|---------------------------------------------------------------------
+*/
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label span.radio-btn {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('../img/radio-button-sprite.png') no-repeat left top;
+    background-size: 200%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked + label span.radio-btn {
+    background-position: right top;
+    background-size: 200%;
+}
+
+.radio {
+    margin-bottom: 20px;
+
+    > label {
+        margin: 0;
+        display: inline;
+    }
+}

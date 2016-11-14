@@ -1,0 +1,114 @@
+/*
+|---------------------------------------------------------------------
+| Helpers
+|---------------------------------------------------------------------
+*/
+
+.link-class{
+	color: blue;
+}
+
+/*
+|---------------------------------------------------------------------
+| Padding
+|---------------------------------------------------------------------
+*/
+
+.padding-20 {
+    padding: 20px;
+}
+
+.remove-body-padding-top {
+    margin-top: -70px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Margins
+|---------------------------------------------------------------------
+*/
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-40 {
+    margin-bottom: 40px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Font Size
+|---------------------------------------------------------------------
+*/
+
+.text-size-1-1em{
+	font-size: 1.1em;
+}
+
+.text-size-1-2em{
+	font-size: 1.2em;
+}
+
+/*
+|---------------------------------------------------------------------
+| Images
+|---------------------------------------------------------------------
+*/
+
+.img-thumbnail {
+    max-height: 100px;
+}
+
+.img-responsive {
+    max-width: 100%;
+    display: block;
+}
+
+/*
+|---------------------------------------------------------------------
+| Opacity
+|---------------------------------------------------------------------
+*/
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+/*
+|---------------------------------------------------------------------
+| Alignment
+|---------------------------------------------------------------------
+*/
+
+.hoz-align{
+	margin-left: 50%;
+	transform: translateX(-50%) !important;
+	-webkit-transform: translateX(-50%) !important;
+	-moz-transform: translateX(-50%) !important;
+}
+
+.vert-align{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) !important;
+	-webkit-transform: translateY(-50%) !important;
+	-moz-transform: translateY(-50%) !important;
+}
+
+.center-align{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+	-webkit-transform: translate(-50%, -50%) !important;
+	-moz-transform: translate(-50%, -50%) !important;
+}

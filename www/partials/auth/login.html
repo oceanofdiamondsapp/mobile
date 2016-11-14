@@ -1,0 +1,28 @@
+<div class="padding-20">
+    <form name="form" ng-submit="login()" novalidate>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" ng-model="user.email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" ng-model="user.password" required>
+        </div>
+
+        <button type="submit" class="btn btn-default btn-block" ng-disabled="form.$invalid || loading">
+            <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !loading}"></i>Login
+        </button>
+    </form>
+
+    <div class="text-center">
+        <a ng-click="onForgotPassword()" class="text-mild-blue" ng-style="{'opacity': fp_loading?.6:1}">
+           <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !fp_loading}"></i> I forgot my password
+        </a>
+        <br>
+        <br>
+        <a ng-click="setAnimation('slide-forward')" href="#/auth/signup" class="text-mild-blue">
+		   I don't have an account
+		</a>
+    </div>
+</div>

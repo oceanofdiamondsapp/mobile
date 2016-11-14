@@ -1,0 +1,27 @@
+/*
+|---------------------------------------------------------------------
+| Cards
+|---------------------------------------------------------------------
+*/
+
+.card {
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    > .title {
+        font-family: $base-font-regular;
+    }
+
+    > p {
+        margin: 0 0 20px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.card-gallery{
+    border: 1px solid lightgray;
+}

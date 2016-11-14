@@ -1,0 +1,266 @@
+<div class="navbar">
+    <a href="#/jobs/create/start" class="navbar-left text-purple" ng-click="setAnimation('slide-back')">
+        <i class="icon icon-arrow-3"></i> Back
+    </a>
+
+    <h2 class="navbar-title">
+        <span class="text-purple">Step 2</span>
+        <span class="navbar-title-description">Add Details</span>
+    </h2>
+
+    <a href="#/jobs/create/review" class="navbar-right text-purple" ng-click="setAnimation('slide-forward')">
+        Next <i class="icon icon-arrow-2"></i>
+    </a>
+</div>
+
+<div class="padding-20">
+    <p ng-show="job.nickname" class="text-center">{{ job.nickname }}</p>
+
+    <div ng-controller="PhotosController">
+        <div ng-if="photos.length > 0" class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td ng-repeat="photo in photos">
+                        <img ng-src="{{getDataUrl(photo)}}" class="img-thumbnail" alt="">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <a ng-click="setAnimation('slide-back')" href="#/jobs/create/start" class="btn btn-default btn-block text-purple">Add Photos</a>
+
+    <p class="text-center">Tag more details so we may give you the most accurate quote. If you want to add more detail, please enter in notes.</p>
+
+    <label class="text-purple">Select your metal:</label>
+
+    <div class="panel">
+        <table class="table table-vertical-align-top table-data-padded">
+            <tr>
+                <td>
+                    <a ng-click="toggleMetal(1)">
+                        <div ng-class="{'opacity-25': job.metal_type_ids.indexOf(1) == -1}">
+                            <img src="img/metal-silver.png" alt="Silver" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleMetal(2)">
+                        <div ng-class="{'opacity-25': job.metal_type_ids.indexOf(2) == -1}">
+                            <img src="img/metal-gold.png" alt="Yellow Gold" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleMetal(3)">
+                        <div ng-class="{'opacity-25': job.metal_type_ids.indexOf(3) == -1}">
+                            <img src="img/metal-rose-gold.png" alt="Rose Gold" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleMetal(4)">
+                        <div ng-class="{'opacity-25': job.metal_type_ids.indexOf(4) == -1}">
+                            <img src="img/metal-white-gold.png" alt="White Gold" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleMetal(5)">
+                        <div ng-class="{'opacity-25': job.metal_type_ids.indexOf(5) == -1}">
+                            <img src="img/metal-platinum.png" alt="Platinum" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-small text-purple text-center">Silver</td>
+                <td class="text-small text-purple text-center">Yellow Gold</td>
+                <td class="text-small text-purple text-center">Rose Gold</td>
+                <td class="text-small text-purple text-center">White Gold</td>
+                <td class="text-small text-purple text-center">Platinum</td>
+            </tr>
+        </table>          
+    </div>
+
+    <label class="text-purple">Select your Stone:</label>
+
+    <div class="panel">
+        <table class="table table-vertical-align-top table-data-padded">
+            <tr>
+                <td>
+                    <a ng-click="clearStones()">
+                        <div ng-class="{'opacity-25': job.stones.length != 0}">
+                            <img src="img/stone-no-gem.png" alt="None" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleStone(1)">
+                        <div ng-class="{'opacity-25': job.stones.indexOf(1) == -1}">
+                            <img src="img/stone-diamond.png" alt="Diamond" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleStone(2)">
+                        <div ng-class="{'opacity-25': job.stones.indexOf(2) == -1}">
+                            <img src="img/stone-ruby.png" alt="Ruby" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleStone(3)">
+                        <div ng-class="{'opacity-25': job.stones.indexOf(3) == -1}">
+                            <img src="img/stone-sapphire.png" alt="Sapphire" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a ng-click="toggleStone(4)">
+                        <div ng-class="{'opacity-25': job.stones.indexOf(4) == -1}">
+                            <img src="img/stone-emerald.png" alt="Emerald" class="img-responsive">
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-small text-purple text-center">None</td>
+                <td class="text-small text-purple text-center">Diamond</td>
+                <td class="text-small text-purple text-center">Ruby</td>
+                <td class="text-small text-purple text-center">Sapphire</td>
+                <td class="text-small text-purple text-center">Emerald</td>
+            </tr>
+        </table>          
+    </div>
+
+    <div class="form-group">
+        <label class="text-purple">Carat (Size):</label>
+
+        <div class="form-select">
+            <select ng-model="job.carat">
+                <option value="">Select Carat Size</option>
+                <option value="0.00">0.00 ct</option>
+                <option value="0.25">0.25 ct</option>
+                <option value="0.50">0.50 ct</option>
+                <option value="0.75">0.75 ct</option>
+                <option value="1.00">1.00 ct</option>
+                <option value="1.25">1.25 ct</option>
+                <option value="1.50">1.50 ct</option>
+                <option value="1.75">1.75 ct</option>
+                <option value="2.00">2.00 ct</option>
+                <option value="2.25">2.25 ct</option>
+                <option value="2.50">2.50 ct</option>
+                <option value="2.75">2.75 ct</option>
+                <option value="3.00">3.00 ct</option>
+                <option value="3.25">3.25 ct</option>
+                <option value="3.50">3.50 ct</option>
+                <option value="3.75">3.75 ct</option>
+                <option value="4.00">4.00 ct</option>
+                <option value="4.25">4.25 ct</option>
+                <option value="4.50">4.50 ct</option>
+                <option value="4.75">4.75 ct</option>
+                <option value="5.00">5.00 ct</option>
+                <option value="5.25">5.25 ct</option>
+                <option value="5.50">5.50 ct</option>
+                <option value="5.75">5.75 ct</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="text-purple">Looking to Spend:</label>
+
+        <div class="form-select">
+            <select ng-model="job.budget">
+                <option value="">Select Budget</option>
+                <option value="100">&lt;$100</option>
+                <option value="500">$100 - $500</option>
+                <option value="1000">$501 - $1000</option>
+                <option value="2000">$1001 - $2000</option>
+                <option value="3000">$2001 - $3000</option>
+                <option value="4000">$3001 - $4000</option>
+                <option value="5000">$4001 - $5000</option>
+                <option value="9999">&gt; $5000</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="text-purple">When Do You Need This By?</label>
+
+        <div class="form-select">
+            <input type="date" ng-model="job.deadline">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="text-purple">Shipping State:</label>
+
+        <p class="text-center">FREE shipping to any U.S. address on all orders! NJ 7% Sales Tax. Rest of U.S. tax exempt.</p>
+
+        <div class="form-select">
+            <select ng-model="job.ship_to_state">
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="text-purple">Notes:</label>
+        <textarea ng-model="job.notes" rows="8"></textarea>
+    </div>
+
+    <a href="#/jobs/create/review" class="btn btn-default btn-block text-purple" ng-click="setAnimation('slide-forward')">Review</a>
+</div>

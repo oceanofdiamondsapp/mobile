@@ -1,0 +1,45 @@
+<div class="bar bar-sm">
+	<a ng-click="setAnimation('slide-back')" href="#/orders/">
+		<i class="icon-arrow-3 icon-left text-teal"></i>
+	</a>
+
+	<h2 class="title">
+		<span class="text-teal">
+			{{ order.order_number }}
+		</span>
+	</h2>
+</div>
+
+<div class="padding-20">
+	<div class="panel panel-basic">
+		<div class="form-group">
+			<span class="label text-teal">Job:</span>
+			{{order.job.job_number}} - {{order.job.nickname}}
+		</div>
+
+		<div class="form-group">
+			<span class="label text-teal">Status:</span>
+			{{ order.status.description }}, {{ getDateString(order.created_at) }}
+		</div>
+
+		<div class="form-group">
+			<span class="label text-teal">Name:</span>
+			{{ order.pp_payer_name }}
+		</div>
+
+		<div class="form-group">
+			<span class="label text-teal">Email:</span>
+			{{ order.pp_payer_email }}
+		</div>
+
+		<div class="form-group">
+			<span class="label text-teal">Shipping Address:</span>
+			{{ order.address }}
+		</div>
+
+		<div class="form-group">
+			<span class="label text-teal">Tracking:</span>
+			<span ng-click="onTapTracking()" ng-class="{'link-class': isURL(order.tracking_url)}">{{ order.tracking_url || 'No tracking information available' }}</span>
+		</div>
+	</div>
+</div>

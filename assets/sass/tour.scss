@@ -1,0 +1,109 @@
+/*
+|---------------------------------------------------------------------
+| Tour
+|---------------------------------------------------------------------
+*/
+
+.panel-tour{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Gibson-Medium", sans-serif;
+    text-align: center;
+    color: white;
+
+    .tour-header{
+        position: relative;
+        height: 16%;
+
+        > h3{
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        > div{
+            position: absolute;
+            width: 100%;
+            height: 17px;
+            bottom: 0px;
+
+            > span{
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 2px solid white;
+                margin: 0 1%;
+            }
+
+            > .pager-fill{
+                background-color: white;
+            }
+        }
+    }
+
+    [ui-view]{
+        position: absolute;
+        height: 84%;
+        top: 16%;
+
+        > div:nth-child(1){
+            height: 48%;
+            position: relative;
+        }
+
+        > div:nth-child(2){
+            height: 33%;
+            padding: 0px 6%;
+
+            p{
+                font-size: 15px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    a{
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+
+        i{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+    }
+
+    h3{
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+
+.panel-tour-darkblue {
+    @include tour-gradient(#495899, #2E457F);
+}
+
+.panel-tour-blue {
+    @include tour-gradient(#008EC6, #1C75BC);
+}
+
+.panel-tour-darkgreen {
+    @include tour-gradient(#59C6CC, #00B0B8);
+}
+
+.panel-tour-green {
+    @include tour-gradient(#98D4C2, #4FBE96);
+}
+
+.panel-tour-red {
+    @include tour-gradient(#F07464, #EE5C5B);
+}

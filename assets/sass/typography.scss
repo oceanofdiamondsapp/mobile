@@ -1,0 +1,119 @@
+/*
+| -----------------------------------------------------------------
+| Typography
+| -----------------------------------------------------------------
+*/
+
+p {
+    line-height: 24px;
+    margin: 0 0 15px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+|---------------------------------------------------------------------
+| Headings
+|---------------------------------------------------------------------
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font-medium;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Font Families and Weights
+|---------------------------------------------------------------------
+*/
+
+.text-gibson-regular {
+    font-family: $base-font-regular;
+    font-weight: normal;
+}
+
+.text-gibson-semibold {
+    font-family: $base-font-semibold;
+    font-weight: normal;
+}
+
+/*
+|---------------------------------------------------------------------
+| Alignment
+|---------------------------------------------------------------------
+*/
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+/*
+|---------------------------------------------------------------------
+| Font Sizes
+|---------------------------------------------------------------------
+*/
+
+.text-small {
+    font-size: 10px;
+}
+
+/*
+|---------------------------------------------------------------------
+| Page Titles
+|---------------------------------------------------------------------
+*/
+
+.page-title {
+    box-shadow: 0 -10px 80px rgba(000, 000, 000, 0.2) inset, 0 8px 10px #b6b9ba;
+    color: #fff;
+    font-family: $header-font-medium;
+    font-weight: normal;
+    font-size: 16px;
+    height: 95px;
+    line-height: 95px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0 2px 1px rgba(000, 000, 000, 0.1);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 9999;
+}
+
+/*
+|---------------------------------------------------------------------
+| Page Title (Ocean Background)
+|---------------------------------------------------------------------
+*/
+
+.page-title-ocean {
+    background: #052136 url('../img/primary-header-bg.jpg') no-repeat center top;
+    background-size: cover;
+    height: 70px;
+    line-height: 70px;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

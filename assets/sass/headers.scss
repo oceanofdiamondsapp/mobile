@@ -1,0 +1,44 @@
+/*
+|---------------------------------------------------------------------
+| Headers
+|---------------------------------------------------------------------
+*/
+
+.header {
+    background: #052136 url('../img/primary-header-bg.jpg') no-repeat center top;
+    background-size: cover;
+    color: #fff;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+
+    .header-brand {
+        display: block;
+        height: 30px;
+        margin: 20px auto;
+    }
+
+    .header-right {
+        position: absolute;
+        margin-top: -15px;
+        right: 15px;
+        top: 50%;
+    }
+
+    a {
+        position: absolute;
+        text-align: center;
+        line-height: 17px;
+        color: #fff;
+        right: 0;
+
+        span{
+            font-size: 9px;
+            font-weight: bold;
+            font-family: "Sackers-Gothic-Medium", sans-serif;
+            letter-spacing: 1px;
+        }
+    }
+}

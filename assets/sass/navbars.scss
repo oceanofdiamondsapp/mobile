@@ -1,0 +1,76 @@
+/*
+|---------------------------------------------------------------------
+| Navbars
+|---------------------------------------------------------------------
+*/
+
+.navbar {
+    background-color: #f1f4f6;
+    position: relative;
+    padding: 18px 0;
+
+    .navbar-title {
+        margin: 0;
+        text-align: center;
+        line-height: 1;
+
+        .navbar-title-description {
+            font-family: $base-font-light;
+            text-transform: none;
+        }
+    }
+
+    .navbar-right {
+        @extend .navbar-item;
+        right: 20px;
+
+        > .icon {
+            margin-left: 5px;
+        }
+    }
+
+    .navbar-left {
+        @extend .navbar-item;
+        left: 20px;
+
+        > .icon {
+            margin-right: 5px;
+        }
+    }
+}
+
+/*
+|---------------------------------------------------------------------
+| Inherited Traits
+|---------------------------------------------------------------------
+*/
+
+.navbar-item {
+    margin-top: -9px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+
+    > .icon {
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 360px){
+
+    .navbar{
+        .navbar-title,
+        .navbar-right,
+        .navbar-left {
+            font-size: 15px
+        }
+
+        .navbar-right{
+            right: 15px;
+        }
+
+        .navbar-left{
+            left: 15px;
+        }
+    }
+}

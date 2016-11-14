@@ -1,0 +1,25 @@
+<div class="bar bar-sm">
+	<h2 class="title">
+		<span class="text-teal">Summary of Orders</span>
+	</h2>
+</div>
+
+<div class="padding-20">
+	<div ng-if="orders.length === 0" class="text-center">
+		<p>You have not placed any orders.</p>
+	</div>
+
+	<a ng-repeat="order in orders"
+	   ng-click="setAnimation('slide-forward');
+	             setTargetOrder(order);"
+	   href="#/orders/{{ order.pp_transaction_id }}"
+	   class="card teal">
+	
+		<div class="title">
+			Order: {{ order.order_number }}<br>
+			Job: {{order.job.job_number}} - {{order.job.nickname}}<br>
+			Ordered: {{ getDateString(order.created_at) }}<br>
+			Status: {{ order.status.description }}
+		</div>
+	</a>
+</div>

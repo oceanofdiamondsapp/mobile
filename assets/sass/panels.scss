@@ -1,0 +1,68 @@
+/*
+|---------------------------------------------------------------------
+| Panels
+|---------------------------------------------------------------------
+*/
+
+.panel {
+    border-top: 1px solid #e6e7e8;
+    border-bottom: 1px solid #e6e7e8;
+    box-shadow: 0 5px 5px #e6e7e8;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child:not(.panel-footer) {
+        margin-bottom: 0;
+    }
+
+    label {
+        margin-left: 0;
+    }
+}
+
+.panel-basic {
+    box-shadow: none;
+    border: 1px solid #e6e7e8;
+}
+
+.panel-footer {
+    margin: 20px -20px -20px -20px;
+    padding: 15px 20px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.panel-tour{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.panel-tour-darkblue {
+    @include tour-gradient(#495899, #2E457F);
+}
+
+.panel-tour-blue {
+    @include tour-gradient(#008EC6, #1C75BC);
+}
+
+.panel-tour-darkgreen {
+    @include tour-gradient(#59C6CC, #00B0B8);
+}
+
+.panel-tour-green {
+    @include tour-gradient(#98D4C2, #4FBE96);
+}
+
+.panel-tour-red {
+    @include tour-gradient(#F07464, #EE5C5B);
+}
+
+

@@ -1,0 +1,40 @@
+<div class="navbar">
+    <h2 class="navbar-title text-mild-blue">Thank You</h2>
+</div>
+
+<div class="padding-20">
+	<p class="text-bold text-center">Order: {{last_order_number}}</p>
+	<p class="text-center">We will be in touch with you shortly. You will receive an alert on your phone once your tracking information is ready, as well as an email if you have signed up for email alerts.</p>
+	<p class="text-purple text-center margin-bottom-20" ng-click="onViewOrder()">VIEW ORDER</p>
+
+	<div class="panel panel-basic" ng-show="showDetails">
+        <p>
+            <span class="label text-mild-blue">Description:</span> {{ quote.description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Your Stone:</span> {{ quote.stones_description }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Your Setting:</span> {{ quote.setting_details }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">Quote:</span> {{ quote.price | currency : '$' : 2 }}
+        </p>
+
+        <p>
+            <span class="label text-mild-blue">Tax ({{ quote.tax.description }}):</span> {{ quote.tax.amount | currency : '$' : 2 }}
+        </p>
+
+        <hr>
+
+        <p>
+            <span class="label text-mild-blue">Total:</span> {{ quote.total_due | currency : '$' : 2 }}
+        </p>
+	</div>
+	<a href="#/jobs/" class="btn btn-block btn-default text-mild-blue" ng-click="setAnimation('slide-back')">Back to Quotes</a>
+</div>

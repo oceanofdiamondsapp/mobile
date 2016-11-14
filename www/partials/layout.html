@@ -1,0 +1,36 @@
+<div class="header">
+    <img src="img/logo.png" class="header-brand" alt="Ocean of Diamonds">
+
+    <div class="header-right">
+        <a href="#/" class="opacity" ng-hide="navIsVisible">
+            <i class="icon-menu"></i>
+            <span>MENU<span>
+        </a>
+
+    </div>
+</div>
+
+<ul class="list-group list-group-xl opacity" ng-show="navIsVisible">
+    <li class="purple"><a ui-sref="app.create-job">New Quote</a></li>
+    <li class="mild-blue"><a ui-sref="app.jobs">Quotes</a></li>
+    <li class="teal"><a ui-sref="app.orders">Orders</a></li>
+    <li class="seafoam"><a ui-sref="app.account">Your Account</a></li>
+    <li class="coral"><a ui-sref="app.gallery">Gallery</a></li>
+    <li class="sandy-brown"><a ui-sref="app.contact">Contact</a></li>
+    <li class="deep-blue"><a ui-sref="app.diamond-education">Diamond Education</a></li>
+    <li class="sky-blue"><a ui-sref="app.about">About OOD</a></li>
+    <li class="cadet-blue"><a ui-sref="app.return-policy">Return Policy</a></li>
+    <li class="gray"><a ui-sref="app.privacy-policy">Privacy Policy</a></li>
+</ul>
+
+<!-- Nested states injected here -->
+<div ui-view="view-create-job" ng-show="$state.includes('app.create-job')"></div>
+<div ui-view="view-jobs" ng-show="$state.includes('app.jobs')"></div>
+<div ui-view="view-orders" ng-show="$state.includes('app.orders')"></div>
+<div ui-view="view-account" ng-show="$state.includes('app.account')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.diamond-education')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.contact')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.gallery')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.about')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.return-policy')"></div>
+<div ui-view="view-page" ng-show="$state.includes('app.privacy-policy')"></div>

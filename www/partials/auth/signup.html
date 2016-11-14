@@ -1,0 +1,51 @@
+<div class="padding-20">
+    <form name="form" ng-submit="signup()" novalidate>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" ng-model="user.name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" ng-model="user.email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" ng-model="user.phone_number" required>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" ng-model="user.password" required>
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" ng-model="user.password_confirmation" required>
+        </div>
+
+        <table class="table table-checkbox">
+            <tr>
+                <td>
+                    <a ng-click="doesAgree = !doesAgree">
+                        <div class="checkbox" ng-class="{checked: doesAgree}"></div>
+                    </a>
+                </td>
+                <td>
+                    You agree with our <span class="text-mild-blue" ng-click="launchPrivacyPolicyModal()">Privacy Policy</span>
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit" ng-disabled="!formIsValid(form) || loading" class="btn btn-default btn-block">
+            <i class="fa fa-spinner fa-spin" ng-class="{'ng-hide': !loading}"></i> Sign Up
+        </button>
+    </form>
+
+    <div class="text-center">
+        <a ng-click="setAnimation('slide-back')" href="#/auth/login" class="text-mild-blue">
+		   I have an existing account
+		</a>
+    </div>
+</div>

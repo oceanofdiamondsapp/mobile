@@ -1,0 +1,44 @@
+/*
+|---------------------------------------------------------------------
+| Tables
+|---------------------------------------------------------------------
+*/
+
+.table {
+    width: 100%;
+    overflow: scroll;
+
+    tr, td, label {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.table-responsive {
+    overflow-x: scroll;
+    margin-bottom: 20px;
+}
+
+.table-checkbox {
+    margin-bottom: 20px;
+
+    td:nth-child(2) {
+        padding-left: 10px;
+    }
+}
+
+.table-vertical-align-top {
+    tr {
+        td {
+            vertical-align: top;
+        }
+    }
+}
+
+.table-data-padded {
+    tr {
+        td {
+            padding: 2px;
+        }
+    }
+}

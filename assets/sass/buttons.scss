@@ -1,0 +1,119 @@
+/*
+|---------------------------------------------------------------------
+| Buttons
+|---------------------------------------------------------------------
+*/
+
+.btn {
+    border-radius: 4px;
+    display: inline-block;
+    font-family: $header-font-medium;
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 20px;
+
+    .icon {
+        font-size: 22px;
+        margin-right: 10px;
+        vertical-align: middle;
+        top: -2px;
+    }
+}
+
+.btn-default {
+    @include background-gradient(#eff3f5, #deedf0);
+    border-bottom: 1px solid #d4d6d6;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-top: 1px solid #f6f6f6;
+    color: #008ec6;
+    text-shadow: 0 2px 2px #fff;
+}
+
+.btn-default:active {
+    @include background-gradient(#deedf0, #eff3f5);
+}
+
+.btn-muted {
+    @include background-gradient(rgba(232, 237, 240, 1), rgba(197, 199, 200, 1));
+    color: #808285;
+}
+
+.btn-danger {
+    @include background-gradient(#f07364, #d95654);
+    border-bottom: 1px solid #be4c4b;
+    border-left: 1px solid #ed5d5b;
+    border-right: 1px solid #ed5d5b;
+    border-top: 2px solid #f7afa8;
+    color: #fff;
+    text-shadow: 0 2px 2px #e43d39;
+}
+
+.btn-danger:active {
+    @include background-gradient(#d95654, #f07364);
+}
+
+.btn-success {
+    @include background-gradient(#96d3c1, #51be96);
+    border-bottom: 1px solid #419979;
+    border-left: 1px solid #51be96;
+    border-right: 1px solid #51be96;
+    border-top: 2px solid #c5e9dc;
+    color: #fff;
+    text-shadow: 0 2px 2px #41a87e;
+}
+
+.btn-success:active {
+    @include background-gradient(#51be96, #96d3c1);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/*
+|---------------------------------------------------------------------
+| Button Group
+|---------------------------------------------------------------------
+*/
+
+.btn-duo {
+    > .btn {
+        width: 48%;
+        display: inline-block;
+
+        &:last-child {
+            float: right;
+        }
+    }
+}
+
+/*
+|---------------------------------------------------------------------
+| Table Button Group
+|---------------------------------------------------------------------
+*/
+
+.table-btn-group {
+    margin: 0 -10px;
+
+    .table {
+        td {
+            padding: 0 10px;
+        }
+    }
+}
+
+/*
+|---------------------------------------------------------------------
+| Disabled
+|---------------------------------------------------------------------
+*/
+
+button[disabled=disabled] {
+    opacity: 0.4;
+}

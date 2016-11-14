@@ -1,0 +1,35 @@
+<div class="navbar">
+    <h2 class="navbar-title">
+        <span class="text-purple">Step 1</span>
+        <span class="navbar-title-description">Start a New Quote</span>
+    </h2>
+
+    <a href="#/jobs/create/details" class="navbar-right text-purple" ng-click="setAnimation('slide-forward')">
+        Next <i class="icon icon-arrow-2"></i>
+    </a>
+</div>
+
+<div class="padding-20">
+    <div class="form-group">
+        <label>Nickname your quote:</label>
+        <input type="text" ng-model="job.nickname">
+    </div>
+
+    <div ng-controller="CameraController">
+        <button type="button" ng-click="addPhoto('camera')" class="btn btn-default btn-block text-purple needsclick">
+            <i class="icon icon-camera"></i> Take New Photo
+        </button>
+
+        <button type="button" ng-click="addPhoto('photolibrary')" class="btn btn-default btn-block text-purple needsclick">
+            <i class="icon icon-photo-roll"></i> Camera Roll
+        </button>
+    </div>
+
+    <a ng-click="setAnimation('slide-forward')" href="#/jobs/create/details" class="btn btn-default btn-block text-purple margin-bottom-40">
+        <i class="icon icon-cancel"></i> Without Photo
+    </a>
+
+    <a ng-click="setAnimation('slide-forward')" href="#/jobs/create/details" class="btn btn-success btn-block">
+        NEXT
+    </a>
+</div>
