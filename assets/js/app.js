@@ -82,7 +82,6 @@ app.constant('API_IP', 'http://104.131.116.54');
 app.constant('API_BASE_URL', 'http://104.131.116.54/api/v1');
 
 
-
 /*
 |---------------------------------------------------------------------
 | Routes
@@ -447,7 +446,8 @@ app.run(['$rootScope', '$state', '$animate', '$timeout', '$window', '$location',
                 ios: {
                     alert: true,
                     badge: true,
-                    sound: true
+                    sound: true,
+                    clearBadge: true
                 }
             };
 
@@ -466,7 +466,7 @@ app.run(['$rootScope', '$state', '$animate', '$timeout', '$window', '$location',
                         window.localStorage['pn_reg_id'] = registrationId;
                     }
 
-                    // alert(registrationId);
+                    console.log("pn_reg_id: " + registrationId);
                 });
             });
 
