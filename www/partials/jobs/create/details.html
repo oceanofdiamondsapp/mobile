@@ -138,7 +138,7 @@
         <label class="text-purple">Carat (Size):</label>
 
         <div class="form-select">
-            <select ng-model="job.carat">
+            <select ng-model="job.carat" style="touch-action: manipulation;">
                 <option value="">Select Carat Size</option>
                 <option value="0.00">0.00 ct</option>
                 <option value="0.25">0.25 ct</option>
@@ -172,7 +172,7 @@
         <label class="text-purple">Looking to Spend:</label>
 
         <div class="form-select">
-            <select ng-model="job.budget">
+            <select ng-model="job.budget" style="touch-action: manipulation;">
                 <option value="">Select Budget</option>
                 <option value="100">&lt;$100</option>
                 <option value="500">$100 - $500</option>
@@ -190,7 +190,7 @@
         <label class="text-purple">When Do You Need This By?</label>
 
         <div class="form-select">
-            <input type="date" ng-model="job.deadline">
+            <input type="date" ng-model="job.deadline" style="touch-action: manipulation;">
         </div>
     </div>
 
@@ -200,7 +200,7 @@
         <p class="text-center">FREE shipping to any U.S. address on all orders! NJ 7% Sales Tax. Rest of U.S. tax exempt.</p>
 
         <div class="form-select">
-            <select ng-model="job.ship_to_state">
+            <select ng-model="job.ship_to_state" style="touch-action: manipulation;">
                 <option value="">Select State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -259,7 +259,7 @@
 
     <div class="form-group">
         <label class="text-purple">Notes:</label>
-        <textarea ng-model="job.notes" rows="8"></textarea>
+        <textarea ng-model="job.notes" rows="8" style="touch-action: manipulation;"></textarea>
     </div>
 
     <a href="#/jobs/create/review" class="btn btn-default btn-block text-purple" ng-click="setAnimation('slide-forward')">Review</a>

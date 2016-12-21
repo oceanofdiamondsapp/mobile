@@ -12,7 +12,7 @@
 
 		<div class="card mild-blue">
 			<p>
-				<strong>Job:</strong> {{ job.job_number }}<br>
+				<strong>Job:</strong> {{ job.job_number }} - {{ job.nickname }}<br>
 				<!-- <strong>Nickname:</strong> {{ job.nickname }}<br> -->
 				<strong>Status:</strong> {{ job.status.description }}<br>
 				<strong>Submitted:</strong> {{ getDateString(job.created_at) }}
