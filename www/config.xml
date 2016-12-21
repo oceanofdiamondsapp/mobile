@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.oceanofdiamondsapp.app"
+        id          = "com.oceanofdiamonds.app"
         versionCode = "10" 
-        version     = "0.5.0" >
+        version     = "0.9.5" >
 
     <!-- Meta -->
     <name>Ocean of Diamonds</name>
@@ -26,7 +26,8 @@
     <plugin name="cordova-plugin-whitelist" />
     <!-- <plugin name="com.phonegap.plugins.pushplugin" source="pgb" spec="2.5.0" /> -->
     <!-- <gap:plugin name="nl.x-services.plugins.ioswebviewcolor" version="1.1" /> -->
-
+    <!-- To take example photos of the expected jewelry product -->
+    
     <!-- Fallback Icon and Splash -->
     <gap:splash src="icon.png" />
     <gap:splash src="splash.png" />
