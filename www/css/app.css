@@ -3489,6 +3489,7 @@ body {
   user-select: none;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
-  -ms-content-zooming: none; }
+  -ms-content-zooming: none;
+  touch-action: manipulation; }
 
 /*# sourceMappingURL=app.css.map */
