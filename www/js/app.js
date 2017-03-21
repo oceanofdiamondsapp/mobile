@@ -465,7 +465,7 @@ app.run(['$rootScope', '$state', '$animate', '$timeout', '$window', '$location',
                     }else{
                         window.localStorage['pn_reg_id'] = registrationId;
                     }
-                    
+                    console.log("pn_reg_id: " + registrationId);
                 });
             });
 
